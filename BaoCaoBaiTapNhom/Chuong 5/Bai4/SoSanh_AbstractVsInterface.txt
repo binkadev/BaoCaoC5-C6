@@ -1,0 +1,50 @@
+==========================================================
+  SO SANH 2 CACH CAI DAT: ABSTRACT CLASS vs INTERFACE     
+==========================================================
+
+1. KE THUA:
+   - Abstract Class: Chi ho tro don ke thua (1 lop cha duy nhat).
+   - Interface:      Ho tro da ke thua (1 lop co the implements nhieu interface).
+
+2. THUOC TINH CHUNG (id, name):
+   - Abstract Class: Dinh nghia 1 lan trong lop cha, cac lop con ke thua va dung luon.
+   - Interface:      Khong the dinh nghia thuoc tinh instance.
+                     Moi lop phai tu khai bao lai cac thuoc tinh id, name.
+
+3. PHUONG THUC CHUNG (displayInfo, getter/setter):
+   - Abstract Class: Cai dat san trong lop cha. Lop con khong can viet lai.
+                     => Tai su dung code tot, tranh lap lai.
+   - Interface:      Chi khai bao (khong co than phuong thuc).
+                     Moi lop con phai tu cai dat lai displayInfo() => Lap lai code.
+
+4. PHUONG THUC KHAC NHAU (calculateMonthlySalary):
+   - Abstract Class: Khai bao la abstract, bat buoc lop con override.
+   - Interface:      Tuong tu, moi lop tu cai dat rieng.
+   => Ca 2 cach deu xu ly tot viec tinh luong khac nhau cho tung loai nhan vien.
+
+5. CONSTRUCTOR:
+   - Abstract Class: Co constructor, lop con goi super() de khoi tao thuoc tinh chung.
+   - Interface:      Khong co constructor. Moi lop phai tu khoi tao thuoc tinh.
+
+6. TINH LINH HOAT:
+   - Abstract Class: It linh hoat hon vi Java chi cho phep ke thua 1 lop.
+   - Interface:      Linh hoat hon, 1 lop co the implements nhieu interface.
+                     VD: Employee co the vua implements IEmployee, vua implements Serializable.
+
+7. TAI SU DUNG CODE:
+   - Abstract Class: Tot hon. Code chung chi viet 1 lan o lop cha.
+   - Interface:      Kem hon. Code displayInfo() phai copy vao ca SalesRep va Consultant.
+
+==========================================================
+  KET LUAN                                                
+==========================================================
+
+- Nen dung ABSTRACT CLASS khi cac lop co quan he 'la mot' (is-a),
+  co thuoc tinh va phuong thuc chung can tai su dung.
+  => Phu hop voi bai toan Employee vi SalesRep 'la mot' Employee.
+
+- Nen dung INTERFACE khi can dinh nghia 'hanh vi' chung cho cac lop
+  khong lien quan ke thua, hoac khi can da ke thua.
+
+=> Voi bai toan nhan vien nay, ABSTRACT CLASS la cach cai dat phu hop hon
+   vi no tranh lap lai code va the hien dung quan he ke thua.

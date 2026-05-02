@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1"
+         xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3"
+         xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc"
+         basedir=".."
+         default="default"
+         name="BookStoreIntegration-impl">
+
+    <target name="default" depends="jar"/>
+
+    <target name="init">
+        <property file="nbproject/project.properties"/>
+        <mkdir dir="${build.classes.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
+               encoding="${source.encoding}" includeantruntime="false"
+               source="${javac.source}" target="${javac.target}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.jar}" basedir="${build.classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main.class}" classpath="${build.classes.dir}" fork="true">
+            <jvmarg value="-Dfile.encoding=UTF-8"/>
+        </java>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>
