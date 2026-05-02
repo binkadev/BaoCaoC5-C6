@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  salary-app:
+    container_name: salary-management-app
+    build: .
+    stdin_open: true
+    tty: true
+    restart: "no"
